@@ -42,5 +42,7 @@ RF15:Ferramenta de Busca e Filtro.	O sistema deve permitir buscar e filtrar usu�
 
 Requisitos Não Funcionais (RNF):
 Sistema de Gamificação	O sistema deve incorporar elementos de gamificação (pontos, níveis, conquistas) para engajar os usuários;
-Segurança e Privacidade: Autenticação via JWT (JSON Web Tokens).
+
+Segurança e Privacidade: Autenticação via JWT (JSON Web Tokens);
+
 Usabilidade: Interface responsiva (funciona em desktop e mobile), intuitiva e de fácil aprendizado, seguindo princípios de Design Centrado no Usuário.
