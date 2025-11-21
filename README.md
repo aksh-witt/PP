@@ -46,3 +46,6 @@ Sistema de Gamificação	O sistema deve incorporar elementos de gamificação (p
 Segurança e Privacidade: Autenticação via JWT (JSON Web Tokens);
 
 Usabilidade: Interface responsiva (funciona em desktop e mobile), intuitiva e de fácil aprendizado, seguindo princípios de Design Centrado no Usuário.
+
+link video teste: 
+https://www.youtube.com/watch?v=USL_R5WuI_E
