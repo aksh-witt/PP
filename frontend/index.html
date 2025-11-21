@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav id="side-bar">
+        <div id="sidebar_content">
+            <div id="library">
+                <i class="fa-solid fa-compact-disc" id="library_icon"></i>
+                <p id="library-name">
+                    <span class="item-description">Sua Biblioteca</span>
+                </p>
+                <button id="add_playlist_btn" class="item-description"><i class="fa-solid fa-circle-plus"></i></button>
+            </div>
+    
+            <button id="open-btn"><i id="open-btn-icon" class="fa-solid fa-angle-right"></i></button>
+
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="item-description">Favoritas</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="item-description">Playlist 2</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="item-description">L</span>
+                    </a>
+                </li>
+                 <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="item-description">Top Pop</span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-music"></i>
+                        <span class="item-description">Sabrina Carpenter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="logout">
+            <button onclick="logout(event)" id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div id="feed-container">
+            
+        </div>
+    </main>
+
+    <header>
+
+        <div id="header-menu">
+
+            <div id="search">
+                <label for="search-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input type="text" id="search-input" placeholder="Pesquisar">
+            </div>
+
+            
+            <div id="menu_content">
+
+                <ul id="top_itens">
+
+                    <li class="top-item">
+                        <button id="add_post"><i class="fa-solid fa-circle-plus"></i></button>
+                    </li>
+
+                    <li class="top-item">
+                        <button id="notification"><i class="fa-solid fa-bell"></i></button>
+                    </li>
+
+                    <li class="top-item">
+                        <button id="message"><i class="fa-solid fa-envelope"></i></button>
+                    </li>
+                </ul>
+
+                <div id="profile">
+                    <a href="./profile.html"><img src="./img/profile-pic-lorem.jpg" alt="" width="50px"></a>
+                </div>
+            </div>
+
+            <div id="config">
+                <button id="btn-config"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+        </div>
+
+    </header>
+
+    
+    <div id="music-player" >
+        <div id="youtube-player" style="display: none;"></div>
+        <div id="player-content">
+            <!-- Informações da Música -->
+            <div id="song-info">
+                <img id="song-cover" src="./img/default-cover.jpg" alt="Capa do Álbum">
+                <div id="song-details">
+                    <div id="song-title">Nenhuma música tocando</div>
+                    <div id="song-artist">Selecione uma música para começar</div>
+                </div>
+                <button id="like-btn" class="player-btn">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <!-- Controles Principais -->
+            <div id="player-controls">
+                <div id="control-buttons">
+                    <button id="shuffle-btn" class="control-btn">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prev-btn" class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="play-pause-btn" class="control-btn play-pause">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next-btn" class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button id="repeat-btn" class="control-btn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <!-- Barra de Progresso -->
+                <div id="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div id="progress-bar">
+                        <div id="progress"></div>
+                        <div id="progress-handle"></div>
+                    </div>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Controles Adicionais -->
+            <div id="extra-controls">
+                <button id="queue-btn" class="player-btn" title="Fila de reprodução">
+                    <i class="fas fa-list"></i>
+                </button>
+                <button id="lyrics-btn" class="player-btn" title="Letra da música">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <div id="volume-control">
+                    <button id="volume-btn" class="player-btn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <div id="volume-slider-container">
+                        <div id="volume-slider">
+                            <div id="volume-level"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="fullscreen-btn" class="player-btn" title="Tela cheia">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+    </div>
+
+        <!-- Modal da Fila de Reprodução -->
+        <div id="queue-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Fila de Reprodução</h2>
+                    <button id="close-queue-modal">&times;</button>
+                </div>
+                <div id="queue-list">
+                    <!-- As músicas da fila serão adicionadas aqui dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Letras -->
+    <div id="lyrics-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Letra da Música</h2>
+                    <button id="close-lyrics-modal">&times;</button>
+                </div>
+                <div id="lyrics-content">
+                    <p>Letras não disponíveis para esta música.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal de Busca -->
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Buscar Música</h2>
+                <button id="close-search-modal">&times;</button>
+            </div>
+            <div class="form-group">
+                <input type="text" id="search-query" placeholder="Digite o nome da música ou artista...">
+                <button id="search-btn" class="btn-create">Buscar</button>
+            </div>
+            <div id="search-results">
+                <!-- Resultados aparecerão aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão de busca no player -->
+    <button id="search-music-btn" class="player-btn" title="Buscar música" style="display: block;">
+    <i class="fas fa-search"></i>
+    </button>
+
+
+    <div id="playlist-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar nova playlist</h2>
+                <button id="close-modal-btn">&times;</button>
+            </div>
+            <form id="playlist-form">
+                <div class="form-group">
+                    <label for="playlist-name">Nome da Playlist</label>
+                    <input type="text" id="playlist-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="playlist-cover">Capa da Playlist</label>
+                    <input type="file" id="playlist-cover" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-create">Criar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar novo post</h2>
+                <button id="close-post-modal-btn">&times;</button>
+            </div>
+            <form id="post-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="post-title">Título *</label>
+                    <input type="text" id="post-title" placeholder="Qual o título do seu post?" required maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="post-description">Descrição</label>
+                    <textarea id="post-description" rows="5" placeholder="O que está acontecendo?"></textarea>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="post-media">Mídia (Imagem ou Áudio) - Opcional</label>
+                    <input type="file" id="post-media" accept="image/*,audio/*">
+                    <small class="file-help">Formatos: JPG, PNG, GIF, MP3, WAV</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancel-post-btn" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-create">Postar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="front.js"></script>
+    <script src="effecr.js"></script>
+</body>
+</html>
